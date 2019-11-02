@@ -4,10 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <script src="js/index.js" type="module"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Musical Playground</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdn.crunchify.com/wp-content/uploads/code/knob.js"></script>
+    <script>
+        function knobfunction(value1){
+            $('.dial')
+            .val(value1)
+            .trigger('change');
+        }
+        
+            $(document).ready(
+                    function() {
+                        setInterval(function() {
+                            var randomnumber = Math.round(Math.random() * 100);
+                            knobfunction(randomnumber);
+                        }, 3000);
+                    });
+    </script>
 </head>
 <body class="grid-container">
-    <button onclick="play()">Play</button>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top color-white">
+            <div class="container">
+                <div class="navbar-header color-white">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#services">SERVICES</a></li>
+                        <li><a href="#portfolio">PORTFOLIO</a></li>
+                        <li><a href="#pricing">PRICING</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right ">
+                    <li><a href="#keyboard">KEYBOARD</a></li>
+                    <li><a href="#piano">PIANO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="jumbotron text-center" ">
+        <br>
+        <br> -->
+        <!-- <div class ="container2">
+            <ul>
+                <li><a href="#"><i class="fa fa-arrows" aria-hidden="true"><h6>B</h6></i></a></li>
+                <li><a href="#"><i class="fa fa-arrows" aria-hidden="true"><h6>P</h6></i></a></li>
+                <li><a href="#"><i class="fa fa-arrows" aria-hidden="true"><h6>T</h6></i></a></li>
+            </ul> 
+        </div> -->
+    <!-- </div> -->
+    <button onclick="javascript:play()">Play</button>
+    <div class="keyboard">
+        <div class="keyboard-line"> 
+            <div class="bt">Q</div> 
+            <div class="bt">W</div>
+            <div class="bt">E</div>
+            <div class="bt">R</div>
+            <div class="bt">T</div>
+            <div class="bt">Y</div>
+            <div class="bt">U</div>
+            <div class="bt">I</div>
+            <div class="bt">O</div>
+            <div class="bt">P</div>
+            <div class="bt">[</div>
+            <div class="bt">]</div>
+        </div>
+        <div class="keyboard-line">
+            <div class="space"></div>
+            <div class="bt">A</div> 
+            <div class="bt">S</div>
+            <div class="bt">D</div>
+            <div class="bt">F</div>
+            <div class="bt">G</div>
+            <div class="bt">H</div>
+            <div class="bt">J</div>
+            <div class="bt">K</div>
+            <div class="bt">L</div>
+            <div class="bt">;</div>
+            <div class="bt">'</div>
+        </div>
+        <div class="keyboard-line">
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="bt">Z</div> 
+            <div class="bt">X</div>
+            <div class="bt">C</div>
+            <div class="bt">V</div>
+            <div class="bt">B</div>
+            <div class="bt">N</div>
+            <div class="bt">M</div>
+            <div class="bt">,</div>
+            <div class="bt">.</div>
+            <div class="bt">/</div>
+        </div>
+    </div>
+    <br>
+    <div class="piano ">
+        <ul class="set">
+            <li class="white e"></li>
+            <li class="black ds"></li>
+            <li class="white d"></li>
+            <li class="black cs"></li>
+            <li class="white c"></li>
+            <li class="white b"></li>
+            <li class="black as"></li>
+            <li class="white a"></li>
+            <li class="black gs"></li>
+            <li class="white g"></li>
+            <li class="black fs"></li>
+            <li class="white f"></li>
+            <li class="white e"></li>
+            <li class="black ds"></li>
+            <li class="white d"></li>
+            <li class="black cs"></li>
+            <li class="white c"></li>
+            <li class="white b"></li>
+            <li class="black as"></li>
+            <li class="white a"></li>
+            <li class="black gs"></li>
+            <li class="white g"></li>
+            <li class="black fs"></li>
+            <li class="white f"></li>
+        </ul>     
+    </div>
+    <div class="control">
+        <input type="range" min="0" max="100" step="1" value="50">
+        <div id="show" align="center"></div>
+            <div align="center">
+                <input type="text" class="dial"> <br><br>
+            </div>
+            <div class="control">
+                <input type="range" min="0" max="100" step="1" value="50">
+                <div align="center">
+                    <input type="text" class="dial"><br><br>
+                </div>
+                <script>
+                    $(".dial").knob({
+                                  'change' : function(v) { console.log(v);}
+                    });
+                </script>
+            </div>  
+            <footer class="container-fluid text-center">
+                <p>@Blueberry Pi Teamgiy</p>
+            </footer>  
+    </main>
+    
 </body>
 </html>
