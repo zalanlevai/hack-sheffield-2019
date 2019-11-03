@@ -1,31 +1,6 @@
 import { Instrument, Keyboard, Synth, Drums } from "./Instrument.js";
 import { SampleLibrary, Sample, fetchSampleLibraries, getSampleLibraries } from "./Sample.js";
 
-// var context = new (window.AudioContext || window.webkitAudioContext);
-
-// var oscillator = context.createOscillator();
-// oscillator.type = "sine";
-// oscillator.frequency.value = 440;
-// oscillator.connect(context.destination);
-// oscillator.start();
-
-// var piano = new Tone.Sampler({ "C4": "../../samples/yamahasy35/Synth-Brassica1.wav" }, { release: 1 }).toMaster().start();
-// var oscillator = new Tone.Oscillator(440, "sine").toMaster().start();
-
-// var synth = new Synth(
-//     new Tone.Sampler(
-//         { "C4": "../../samples/yamahasy35/Synth-ElectricPianoHi.wav" }),
-//         // () => { synth.triggerAttack("C4"); synth.triggerAttack("E4"); synth.triggerAttack("G4"); }).toMaster(),
-//     "Synth", "");
-
-// (async () => {
-//     var response = await fetch("https://localhost:44309/api/Instruments");
-//     var jsonResponse = await response.json();
-//     console.log(jsonResponse);
-
-
-// })();
-
 var sampleLibraries;
 
 var selectedInstrument;
@@ -75,12 +50,9 @@ function onSampleSelection() {
     var instrumentSelection = document.getElementById("instrument-selection");
     var sampleSelection = document.getElementById("sample-selection");
 
-    // for (var i = 0; i < sampleLibraries.length; i++)
-    //     instrumentSelection.options[i] = new Option(sampleLibraries[i].name, sampleLibraries[i].name);
     selectedInstrument = sampleLibraries[instrumentSelection.selectedIndex];
-
-    // for (var i = 0; i < selectedInstrument.samples.length; i++)
-    //     sampleSelection.options[i] = new Option(selectedInstrument.samples[i].name, selectedInstrument.samples[i].name);
+    for (var i = 0; i < selectedInstrument.samples.length; i++)
+        sampleSelection.options[i] = new Option(selectedInstrument.samples[i].name, selectedInstrument.samples[i].name);
     selectedSample = selectedInstrument.samples[sampleSelection.selectedIndex];
 
     console.log(selectedInstrument, selectedSample);
